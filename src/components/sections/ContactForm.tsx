@@ -54,7 +54,7 @@ export function ContactForm() {
   const border = (k: keyof Enquiry) => (errors[k] ? "border-danger" : "border-line");
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="container-x py-20 md:py-28">
+    <section id="contact" aria-labelledby="contact-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" /><T en="Contact" hi="संपर्क" /></p>
@@ -67,7 +67,7 @@ export function ContactForm() {
               hi="पहली बातचीत मुफ़्त है और इसमें किसी प्रोडक्ट का नाम नहीं लिया जाता। हम सुनते हैं, सवाल पूछते हैं, और ईमानदारी से बताते हैं कि हम मदद कर सकते हैं या नहीं।"
             />
           </p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-success/10 px-4 py-2 text-sm font-semibold text-success">
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-success/30 bg-surface px-4 py-2 text-sm font-semibold text-success">
             <Clock aria-hidden="true" className="h-4 w-4" />
             <T en="We call back within one working day." hi="हम एक कार्य-दिवस के भीतर कॉल बैक करते हैं।" />
           </p>
@@ -172,6 +172,6 @@ export function ContactForm() {
           )}
         </div>
       </div>
-    </section>
+    </div></section>
   );
 }

@@ -34,7 +34,7 @@ export default function Home() {
       <Hero />
       <Suspense><Services /></Suspense>
       <Suspense><Values /></Suspense>
-      <section id="tools" aria-labelledby="calc-title" className="border-y border-line bg-surface py-20 md:py-28">
+      <section id="tools" aria-labelledby="calc-title" className="border-y border-line bg-surface py-16 md:py-20">
         <div className="container-x">
           <SectionHeading
             id="calc-title"

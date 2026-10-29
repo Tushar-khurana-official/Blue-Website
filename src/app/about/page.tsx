@@ -19,7 +19,7 @@ export default function AboutPage() {
         title={<>Helping families in {site.city} <span className="text-gradient">invest with confidence</span></>}
         intro={site.description}
       />
-      <section aria-labelledby="founder-title" className="container-x grid items-center gap-10 py-20 md:py-24 lg:grid-cols-[1.2fr_0.8fr]">
+      <section aria-labelledby="founder-title" className="container-x grid items-center gap-10 py-16 md:py-20 lg:grid-cols-[1.2fr_0.8fr]">
         <div>
           <div><Avatar name={site.founder.name} photo={site.founder.photo} size={112} /></div>
           <p className="eyebrow mt-6"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" />The person behind your plan</p>

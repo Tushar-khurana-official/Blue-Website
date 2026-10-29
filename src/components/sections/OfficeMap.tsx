@@ -9,7 +9,7 @@ export function OfficeMap() {
   const c = site.contact;
   const embed = `https://www.google.com/maps?q=${encodeURIComponent(c.address)}&output=embed`;
   return (
-    <section aria-labelledby="visit-title" className="border-t border-line bg-bg-soft py-20 md:py-24">
+    <section aria-labelledby="visit-title" className="bg-surface py-16 md:py-20">
       <div className="container-x">
         <SectionHeading
           id="visit-title"

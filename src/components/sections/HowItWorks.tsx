@@ -10,7 +10,7 @@ import { T } from "@/components/ui/T";
 export function HowItWorks() {
   const reduce = useReducedMotion();
   return (
-    <section id="process" aria-labelledby="how-title" className="bg-bg-soft py-20 md:py-28"><div className="container-x">
+    <section id="process" aria-labelledby="how-title" className="bg-bg-soft py-16 md:py-20"><div className="container-x">
       <SectionHeading id="how-title" eyebrow={<T en="How it works" hi="कैसे काम करता है" />} title={<T en={<>Four steps. <span className="text-gradient">The last one never ends.</span></>} hi={<>चार कदम। <span className="text-gradient">आख़िरी कभी ख़त्म नहीं होता।</span></>} />} intro={<T en="Most of the value is in the fourth step." hi="सबसे ज़्यादा फ़ायदा चौथे कदम में है।" />} />
       <div className="relative mt-16">
         <div aria-hidden="true" className="absolute left-6 top-0 h-full w-0.5 bg-line md:left-0 md:top-7 md:h-0.5 md:w-full" />

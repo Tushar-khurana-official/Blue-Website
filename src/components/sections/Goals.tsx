@@ -7,7 +7,7 @@ import { T } from "@/components/ui/T";
 
 export function Goals() {
   return (
-    <section id="goals" aria-labelledby="goals-title" className="container-x py-20 md:py-28">
+    <section id="goals" aria-labelledby="goals-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
       <SectionHeading
         id="goals-title"
         eyebrow={<T en="Goals we plan for" hi="जिन लक्ष्यों के लिए हम प्लान बनाते हैं" />}
@@ -44,6 +44,6 @@ export function Goals() {
       <p className="mt-9 text-center text-sm text-muted">
         The building blocks shown are typical categories, not recommendations. What fits depends on your situation.
       </p>
-    </section>
+    </div></section>
   );
 }

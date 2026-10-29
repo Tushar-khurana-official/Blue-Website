@@ -27,9 +27,9 @@ export default function RealEstatePage() {
           <Button href="/contact" size="lg">Talk about a property</Button>
         </div>
       </PageHero>
-      <section aria-labelledby="re-title" className="container-x py-20 md:py-28">
+      <section aria-labelledby="re-title" className="container-x py-16 md:py-20">
         <SectionHeading id="re-title" eyebrow="What we help with" title={<>Three kinds of <span className="text-gradient">property</span></>} />
-        <Reveal as="ul" className="mt-14 grid gap-6 md:grid-cols-3">
+        <Reveal as="ul" className="mt-10 grid gap-6 md:grid-cols-3">
           {realEstate.map((r) => (
             <RevealItem as="li" key={r.title}>
               <div className="card-hover h-full rounded-[24px] border border-line bg-surface p-7">
@@ -44,7 +44,7 @@ export default function RealEstatePage() {
         </Reveal>
       </section>
       <section aria-labelledby="checks-title" className="border-y border-line bg-surface">
-        <div className="container-x grid gap-10 py-20 md:py-24 lg:grid-cols-2">
+        <div className="container-x grid gap-10 py-16 md:py-20 lg:grid-cols-2">
           <SectionHeading
             align="left"
             id="checks-title"

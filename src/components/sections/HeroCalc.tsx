@@ -20,7 +20,7 @@ export function HeroCalc() {
   const min = 1000, max = 100000;
 
   return (
-    <div className="glass-dark relative mx-auto w-full max-w-[500px] rounded-[28px] p-6 sm:p-7">
+    <div className="glass-dark relative mx-auto w-full max-w-[500px] rounded-[28px] p-5 sm:p-6">
       <div className="flex items-start justify-between gap-3">
         <h2 className="font-display text-lg font-bold sm:text-xl">
           <T en="What could a monthly SIP become?" hi="मासिक SIP कितना बन सकता है?" />
@@ -30,7 +30,7 @@ export function HeroCalc() {
         </span>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-4">
         <div className="flex items-center justify-between gap-3">
           <label htmlFor={`${id}-amt`} className="text-sm text-on-dark">
             <T en="Monthly SIP" hi="मासिक SIP" />
@@ -51,7 +51,7 @@ export function HeroCalc() {
         />
       </div>
 
-      <fieldset className="mt-4">
+      <fieldset className="mt-3">
         <legend className="text-sm text-on-dark"><T en="For" hi="अवधि" /></legend>
         <div className="mt-2 grid grid-cols-4 gap-2">
           {YEARS.map((y) => (
@@ -70,10 +70,10 @@ export function HeroCalc() {
         </div>
       </fieldset>
 
-      <div className="mt-6 rounded-2xl bg-white/8 p-5" aria-live="polite">
+      <div className="mt-4 rounded-2xl bg-white/8 p-4" aria-live="polite">
         <p className="text-sm text-on-dark"><T en="Could become" hi="बन सकता है" /></p>
-        <p className="font-display text-4xl font-extrabold text-white tabular">{inrShort(r.total)}</p>
-        <div className="mt-4 flex h-2.5 overflow-hidden rounded-full bg-sky/80" aria-hidden="true">
+        <p className="font-display text-[2rem] font-extrabold leading-tight text-white tabular">{inrShort(r.total)}</p>
+        <div className="mt-3 flex h-2.5 overflow-hidden rounded-full bg-sky/80" aria-hidden="true">
           <span className="h-full bg-royal" style={{ width: `${investedPct}%` }} />
         </div>
         <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
@@ -88,7 +88,7 @@ export function HeroCalc() {
         </dl>
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-on-dark-muted">
           <T en={`Illustration at an assumed ${RATE}% a year. Not guaranteed.`} hi={`${RATE}% सालाना के अनुमान पर उदाहरण। गारंटी नहीं।`} />
         </p>

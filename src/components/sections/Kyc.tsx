@@ -6,7 +6,7 @@ import { T } from "@/components/ui/T";
 export function Kyc() {
   return (
     <section id="kyc" aria-labelledby="kyc-title" className="border-y border-line bg-surface">
-      <div className="container-x grid items-center gap-12 py-20 md:py-28 lg:grid-cols-2">
+      <div className="container-x grid items-center gap-12 py-16 md:py-20 lg:grid-cols-2">
         <div>
           <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" /><T en="New to investing? Start here" hi="निवेश में नए हैं? यहाँ से शुरू करें" /></p>
           <h2 id="kyc-title" className="mt-3 text-3xl font-bold md:text-[2.6rem] md:leading-tight">

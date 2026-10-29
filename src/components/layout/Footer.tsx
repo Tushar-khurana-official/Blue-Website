@@ -40,7 +40,7 @@ export function Footer() {
   const c = site.contact;
   const r = site.registration;
   return (
-    <footer className="on-navy bg-navy pb-24 text-sm text-on-dark md:pb-0">
+    <footer className="on-navy bg-navy text-sm text-on-dark">
       <div className="container-x grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-3">
           <Logo tone="light" />

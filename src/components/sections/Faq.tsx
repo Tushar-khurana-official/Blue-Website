@@ -12,7 +12,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   const base = useId();
   return (
-    <section id="faq" aria-labelledby="faq-title" className="py-20 md:py-28">
+    <section id="faq" aria-labelledby="faq-title" className="border-t border-line bg-surface py-16 md:py-20">
       <div className="container-x max-w-3xl">
         <SectionHeading id="faq-title" eyebrow={<T en="FAQ" hi="सवाल-जवाब" />} title={<T en={<>Questions, <span className="text-gradient">answered</span></>} hi={<>आपके सवाल, <span className="text-gradient">हमारे जवाब</span></>} />} />
         <ul className="mt-12 space-y-3">

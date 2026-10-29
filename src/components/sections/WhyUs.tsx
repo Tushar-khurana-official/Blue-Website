@@ -5,10 +5,10 @@ import { T } from "@/components/ui/T";
 
 export function WhyUs() {
   return (
-    <section id="why" aria-labelledby="why-title" className="border-y border-line bg-surface py-20 md:py-28">
+    <section id="why" aria-labelledby="why-title" className="bg-surface py-16 md:py-20">
       <div className="container-x">
         <SectionHeading id="why-title" eyebrow={<T en="Why families choose us" hi="परिवार हमें क्यों चुनते हैं" />} title={<T en={<>Fewer products. <span className="text-gradient">More attention.</span></>} hi={<>कम प्रोडक्ट। <span className="text-gradient">ज़्यादा ध्यान।</span></>} />} />
-        <Reveal as="ul" className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal as="ul" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, n) => (
             <RevealItem as="li" key={f.title}>
               <div className="card-hover h-full rounded-[20px] border border-line bg-bg-soft p-7">

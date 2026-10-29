@@ -8,10 +8,10 @@ import { T } from "@/components/ui/T";
 export function Reviews() {
   if (site.reviews.length === 0) return null;
   return (
-    <section id="reviews" aria-labelledby="reviews-title" className="bg-bg-soft py-20 md:py-28">
+    <section id="reviews" aria-labelledby="reviews-title" className="bg-bg-soft py-16 md:py-20">
       <div className="container-x">
         <SectionHeading id="reviews-title" eyebrow={<T en="Client reviews" hi="क्लाइंट रिव्यू" />} title={<T en={<>What clients <span className="text-gradient">say</span></>} hi={<>क्लाइंट <span className="text-gradient">क्या कहते हैं</span></>} />} />
-        <Reveal as="ul" className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal as="ul" className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {site.reviews.map((r) => (
             <RevealItem as="li" key={r.name + r.text.slice(0, 20)}>
               <figure className="h-full rounded-[22px] border border-line bg-surface p-7">

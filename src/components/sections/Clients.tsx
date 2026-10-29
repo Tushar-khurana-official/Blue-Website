@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/Button";
 
 export function Clients() {
   return (
-    <section id="clients" aria-label="Existing clients" className="border-y border-line bg-surface">
-      <div className="container-x grid gap-7 py-20 md:grid-cols-2 md:py-24">
+    <section id="clients" aria-label="Existing clients" className="bg-surface">
+      <div className="container-x grid gap-7 py-16 md:grid-cols-2 md:py-20">
         <div className="on-navy relative overflow-hidden rounded-[24px] bg-gradient-to-br from-navy to-[#143a8c] p-8 text-white sm:p-10">
           <div aria-hidden="true" className="blob blob-b -bottom-24 -right-16 h-64 w-64 text-sky/30" />
           <div className="relative">

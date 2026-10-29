@@ -24,7 +24,7 @@ function RiskMeter({ level, label }: { level: number; label: string }) {
 
 export function FundCategories() {
   return (
-    <section aria-labelledby="funds-title" className="py-20 md:py-28">
+    <section aria-labelledby="funds-title" className="py-16 md:py-20">
       <div className="container-x">
         <SectionHeading
           id="funds-title"
@@ -32,7 +32,7 @@ export function FundCategories() {
           title={<>Find the <span className="text-gradient">right fit</span> for every goal</>}
           intro="Each category suits a different time horizon and appetite for ups and downs."
         />
-        <Reveal as="ul" className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <Reveal as="ul" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {fundCategories.map((f) => (
             <RevealItem as="li" key={f.name}>
               <article className="card-hover flex h-full flex-col rounded-[22px] border border-line bg-surface p-6">

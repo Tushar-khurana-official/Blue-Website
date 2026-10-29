@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function MarketSnapshot() {
   const rows = tickers.slice(0, 6);
   return (
-    <section aria-labelledby="market-title" className="bg-bg-soft"><div className="container-x py-20 md:py-28">
+    <section aria-labelledby="market-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
       <SectionHeading
         id="market-title"
         eyebrow="Market snapshot"

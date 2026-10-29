@@ -8,7 +8,7 @@ import { T } from "@/components/ui/T";
 /** Founder quote, the fund-house marquee and the distributor disclosure. */
 export function FundHouses() {
   return (
-    <section id="resources" aria-labelledby="fh-title" className="container-x py-20 md:py-28">
+    <section id="resources" aria-labelledby="fh-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
       <figure className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-navy to-royal px-6 py-14 text-center text-white sm:px-14 md:py-16">
         <div aria-hidden="true" className="blob blob-a -right-16 -top-20 h-72 w-72 text-sky/40" />
         <span aria-hidden="true" className="relative block font-display text-8xl leading-[0.6] text-cyan-light/70">&ldquo;</span>
@@ -20,7 +20,7 @@ export function FundHouses() {
         </figcaption>
       </figure>
 
-      <div className="mt-24">
+      <div className="mt-16">
         <SectionHeading
           id="fh-title"
           eyebrow={<T en="Fund houses we work with" hi="जिन फंड हाउस के साथ हम काम करते हैं" />}
@@ -45,7 +45,7 @@ export function FundHouses() {
       </div>
       <p className="mt-6 text-center text-sm text-muted">Fund house names are shown for identification only. Listing does not imply a recommendation of any scheme.</p>
 
-      <div className="mt-14 flex flex-col gap-5 rounded-[24px] border border-[#bfd8ff] bg-[#eaf3ff] p-7 sm:flex-row sm:p-9">
+      <div className="mt-10 flex flex-col gap-5 rounded-[24px] border border-[#bfd8ff] bg-surface p-7 sm:flex-row sm:p-9">
         <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-sky text-white">
           <Info aria-hidden="true" className="h-7 w-7" />
         </span>
@@ -61,6 +61,6 @@ export function FundHouses() {
           </Link>
         </div>
       </div>
-    </section>
+    </div></section>
   );
 }
