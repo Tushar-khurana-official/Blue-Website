@@ -22,7 +22,7 @@ export function Button({
   ...rest
 }: { href?: string; variant?: Variant; size?: "md" | "lg"; className?: string; children: ReactNode } & Omit<ComponentProps<"button">, "className">) {
   const cls =
-    `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[background-color,color,border-color,transform,box-shadow] duration-200 ` +
+    `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold transition-[background-color,color,border-color,transform,box-shadow] duration-200 ` +
     `hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] ${size === "lg" ? "min-h-13 px-7 text-base" : "min-h-11 px-5 text-sm"} ${styles[variant]} ${className}`;
   if (href) {
     const external = /^(https?:|tel:|mailto:)/.test(href);

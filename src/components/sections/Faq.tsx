@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useId, useState } from "react";
 import { faqs } from "@/lib/content";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/components/ui/T";
 
 /** Animated accordion: one answer open at a time, keyboard and screen-reader friendly. */
 export function Faq() {
@@ -13,7 +14,7 @@ export function Faq() {
   return (
     <section id="faq" aria-labelledby="faq-title" className="py-20 md:py-28">
       <div className="container-x max-w-3xl">
-        <SectionHeading id="faq-title" eyebrow="FAQ" title={<>Questions, <span className="text-gradient">answered</span></>} />
+        <SectionHeading id="faq-title" eyebrow={<T en="FAQ" hi="सवाल-जवाब" />} title={<T en={<>Questions, <span className="text-gradient">answered</span></>} hi={<>आपके सवाल, <span className="text-gradient">हमारे जवाब</span></>} />} />
         <ul className="mt-12 space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;

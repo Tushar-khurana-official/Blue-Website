@@ -9,7 +9,15 @@ export const site = {
     "Shree Investments helps families in Jodhpur grow their wealth through the stock market, mutual funds and real estate, with honest guidance, clear risks and a plan you can follow.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://shree-investments.vercel.app").replace(/\/$/, ""),
 
-  founder: { name: "Manish Purohit", role: "Founder" },
+  founder: {
+    name: "Manish Purohit",
+    nameHi: "मनीष पुरोहित",
+    role: "Founder",
+    /** Put a square photo (at least 600×600) in public/images and set e.g. "/images/manish-purohit.jpg". Empty shows initials. */
+    photo: "",
+  },
+  /** Office photo (landscape, at least 1200×800) in public/images, e.g. "/images/office.jpg". Empty hides it. */
+  officePhoto: "",
   quote: "The best plan is the one you can actually keep.",
 
   contact: {
@@ -34,6 +42,13 @@ export const site = {
   },
   certifications: ["NISM Series V-A", "NISM Series VIII"],
 
+  /**
+   * Real client reviews only, copied with the client's permission (e.g. from your Google Business profile).
+   * The reviews section stays hidden until at least one is added.
+   */
+  reviews: [] as { name: string; text: string; rating: number; date?: string }[],
+  googleReviewsUrl: "", // link to your Google reviews, shown under the reviews
+
   /** Client portal / app login. Leave empty and the button points to the contact section. */
   clientLoginUrl: "",
 
@@ -42,13 +57,13 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "/" },
-  { label: "Mutual Funds", href: "/mutual-funds" },
-  { label: "Stock Market", href: "/stock-market" },
-  { label: "Real Estate", href: "/real-estate" },
-  { label: "Calculators", href: "/calculators" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", hi: "होम", href: "/" },
+  { label: "Mutual Funds", hi: "म्यूचुअल फंड", href: "/mutual-funds" },
+  { label: "Stock Market", hi: "शेयर बाज़ार", href: "/stock-market" },
+  { label: "Real Estate", hi: "रियल एस्टेट", href: "/real-estate" },
+  { label: "Calculators", hi: "कैलकुलेटर", href: "/calculators" },
+  { label: "About", hi: "हमारे बारे में", href: "/about" },
+  { label: "Contact", hi: "संपर्क", href: "/contact" },
 ] as const;
 
 export const DISCLAIMER =

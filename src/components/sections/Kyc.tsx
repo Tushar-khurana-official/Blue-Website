@@ -1,19 +1,22 @@
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
+import { T } from "@/components/ui/T";
 
 export function Kyc() {
   return (
     <section id="kyc" aria-labelledby="kyc-title" className="border-y border-line bg-surface">
       <div className="container-x grid items-center gap-12 py-20 md:py-28 lg:grid-cols-2">
         <div>
-          <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" />New to investing? Start here</p>
+          <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" /><T en="New to investing? Start here" hi="निवेश में नए हैं? यहाँ से शुरू करें" /></p>
           <h2 id="kyc-title" className="mt-3 text-3xl font-bold md:text-[2.6rem] md:leading-tight">
-            One KYC, <span className="text-gradient">every fund house</span>
+            <T en={<>One KYC, <span className="text-gradient">every fund house</span></>} hi={<>एक KYC, <span className="text-gradient">हर फंड हाउस</span></>} />
           </h2>
           <p className="mt-4 text-lg text-muted">
-            KYC (Know Your Customer) is a one-time identity check required before your first mutual fund purchase. Once it is registered
-            with a KRA, it is valid across all fund houses.
+            <T
+              en="KYC (Know Your Customer) is a one-time identity check required before your first mutual fund purchase. Once it is registered with a KRA, it is valid across all fund houses."
+              hi="KYC एक बार की पहचान जाँच है, जो पहले म्यूचुअल फंड निवेश से पहले ज़रूरी है। KRA में रजिस्टर होने के बाद यह सभी फंड हाउस में मान्य रहती है।"
+            />
           </p>
         </div>
         <Reveal className="grid gap-5">

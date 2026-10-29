@@ -86,7 +86,7 @@ export function Footer() {
               <Phone aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-sky" />
               <span>
                 {c.phones.map((p) => (
-                  <a key={p.href} href={`tel:${p.href}`} className="block hover:text-white">{p.label}</a>
+                  <a key={p.href} href={`tel:${p.href}`} className="block py-1 hover:text-white">{p.label}</a>
                 ))}
               </span>
             </li>

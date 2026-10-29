@@ -28,6 +28,10 @@ Everything business-specific is in two files:
 - **`src/config/site.ts`**: firm name, city, tagline, founder and quote, phones, WhatsApp, email, address and map link, **ARN / EUIN / SEBI registration**, NISM certifications, client-login URL, social links, navigation, and the disclaimer text.
 - **`src/lib/content.ts`**: services, credentials strip, values, goals, "why choose us" tiles, the 4 steps, fund categories, fund houses, real estate copy, sample ticker data (stock market page only), FAQs and the contact form's "interested in" options.
 
+**Photos and reviews (`src/config/site.ts`):** put files in `public/images/` and set `founder.photo` (square, at least 600×600) and `officePhoto` (landscape, at least 1200×800). Until then the founder shows as initials and the office photo is hidden. Add real, consented reviews to `reviews` (and `googleReviewsUrl`); the reviews section stays hidden while the list is empty.
+
+**Hindi:** the हिंदी / English button in the header switches the navigation, the home page headings, the hero, the hero calculator, the contact section and the call bar. Wrap any text in `<T en="…" hi="…" />` (`src/components/ui/T.tsx`) to translate it. Both languages are server-rendered and CSS shows one, so switching has no flash. The choice is remembered in the visitor's browser.
+
 Colours are CSS variables at the top of `src/app/globals.css` (`:root`). Replace the logo in `src/components/layout/Logo.tsx` and the favicon `src/app/icon.svg`.
 
 **Contact form:** submissions go to `/api/contact`, which validates them (Indian mobile number, email, consent), filters bots with a honeypot field, rate-limits by IP, and POSTs each enquiry as JSON to `CONTACT_WEBHOOK_URL` (Zapier, Make, Google Apps Script, a CRM…). Without a webhook, enquiries are only logged on the server.

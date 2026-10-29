@@ -1,10 +1,11 @@
 "use client";
 
-import { CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { CheckCircle2, Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { site } from "@/config/site";
 import { interests } from "@/lib/content";
 import { validate, type Enquiry, type Errors } from "@/lib/validate";
+import { T } from "@/components/ui/T";
 
 const tile = "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-royal text-white";
 const input =
@@ -56,12 +57,19 @@ export function ContactForm() {
     <section id="contact" aria-labelledby="contact-title" className="container-x py-20 md:py-28">
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" />Contact</p>
+          <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" /><T en="Contact" hi="संपर्क" /></p>
           <h2 id="contact-title" className="mt-3 text-3xl font-bold md:text-[2.6rem] md:leading-tight">
-            Start a <span className="text-gradient">conversation</span>
+            <T en={<>Start a <span className="text-gradient">conversation</span></>} hi={<>बातचीत <span className="text-gradient">शुरू करें</span></>} />
           </h2>
           <p className="mt-4 text-lg text-muted">
-            The first conversation is free and names no products. We listen, ask questions, and tell you honestly whether we can help.
+            <T
+              en="The first conversation is free and names no products. We listen, ask questions, and tell you honestly whether we can help."
+              hi="पहली बातचीत मुफ़्त है और इसमें किसी प्रोडक्ट का नाम नहीं लिया जाता। हम सुनते हैं, सवाल पूछते हैं, और ईमानदारी से बताते हैं कि हम मदद कर सकते हैं या नहीं।"
+            />
+          </p>
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-success/10 px-4 py-2 text-sm font-semibold text-success">
+            <Clock aria-hidden="true" className="h-4 w-4" />
+            <T en="We call back within one working day." hi="हम एक कार्य-दिवस के भीतर कॉल बैक करते हैं।" />
           </p>
           <ul className="mt-8 space-y-4">
             <li className="glass flex items-center gap-4 rounded-2xl p-4">
@@ -69,7 +77,7 @@ export function ContactForm() {
               <span>
                 <span className="block text-xs text-muted">Call us</span>
                 {c.phones.map((p) => (
-                  <a key={p.href} href={`tel:${p.href}`} className="block font-semibold hover:text-link">{p.label}</a>
+                  <a key={p.href} href={`tel:${p.href}`} className="block py-1 font-semibold hover:text-link">{p.label}</a>
                 ))}
               </span>
             </li>

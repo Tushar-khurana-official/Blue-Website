@@ -48,8 +48,8 @@
   --color-accent-text: var(--accent-text);
   --color-success: var(--success);
   --color-danger: var(--danger);
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), var(--font-deva), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-deva), ui-sans-serif, system-ui, sans-serif;
   --radius-card: 22px;
 }
 
@@ -65,6 +65,9 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
   :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
   ::selection { background: var(--royal); color: #fff; }
+  /* Bilingual text (T.tsx): show one language at a time. */
+  html:not(.lang-hi) [data-l="hi"], html.lang-hi [data-l="en"] { display: none; }
+  [lang="hi"] { letter-spacing: 0; }
 }
 
 @layer components {

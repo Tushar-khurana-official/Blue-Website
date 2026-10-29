@@ -1,6 +1,7 @@
 import { values } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
+import { T } from "@/components/ui/T";
 
 /** The four things the firm stands for, closing with the brand line. */
 export function Values() {
@@ -18,7 +19,7 @@ export function Values() {
           </RevealItem>
         ))}
       </Reveal>
-      <p className="mt-12 text-center font-display text-2xl font-semibold text-link">One vision, infinite growth</p>
+      <p className="mt-12 text-center font-display text-2xl font-semibold text-link"><T en="One vision, infinite growth" hi="एक सोच, अनंत ग्रोथ" /></p>
     </section>
   );
 }

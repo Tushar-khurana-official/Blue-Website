@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Sora } from "next/font/google";
+import { Noto_Sans_Devanagari, Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { site } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,9 +7,13 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { MotionProvider } from "@/components/layout/MotionProvider";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { orgSchema } from "@/lib/seo";
+import { bootScript } from "@/lib/lang";
+import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
+/** Hindi text only; not preloaded, so English visitors never download it. */
+const deva = Noto_Sans_Devanagari({ subsets: ["devanagari"], variable: "--font-deva", weight: ["400", "600", "700"], display: "swap", preload: false });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"], display: "optional" });
 
 export const metadata: Metadata = {
@@ -27,10 +31,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${jakarta.variable} ${sora.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${jakarta.variable} ${sora.variable} ${deva.variable}`} suppressHydrationWarning>
       <head>
-        {/* Marks that JavaScript is running, so scroll-reveal content is only hidden when it can be revealed. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <JsonLd data={orgSchema} />
       </head>
       <body className="min-h-dvh">
@@ -45,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </MotionProvider>
         <WhatsAppButton />
+        <MobileContactBar />
       </body>
     </html>
   );

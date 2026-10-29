@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav } from "@/config/site";
 import { Button } from "@/components/ui/Button";
+import { T } from "@/components/ui/T";
+import { LangToggle } from "./LangToggle";
 import { Logo } from "./Logo";
 
 /** Sticky navy navbar that turns more opaque once the page scrolls. Mobile: native <dialog> drawer. */
@@ -40,7 +42,7 @@ export function Navbar() {
     >
       <div className="container-x flex h-18 items-center justify-between gap-4">
         <Logo tone="light" />
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {nav.map((n) => (
               <li key={n.href}>
@@ -51,7 +53,7 @@ export function Navbar() {
                     isActive(n.href) ? "text-white" : "text-on-dark"
                   }`}
                 >
-                  {n.label}
+                  <T en={n.label} hi={n.hi} />
                   {isActive(n.href) && <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-sky" />}
                 </Link>
               </li>
@@ -59,12 +61,13 @@ export function Navbar() {
           </ul>
         </nav>
         <div className="flex items-center gap-2">
+          <LangToggle className="border-white/25 text-white hover:bg-white/10" />
           <span className="hidden sm:inline-flex">
-            <Button href="/contact">Talk to us</Button>
+            <Button href="/contact"><T en="Talk to us" hi="बात करें" /></Button>
           </span>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/25 text-white lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/25 text-white xl:hidden"
             aria-label="Open menu"
             aria-haspopup="dialog"
             aria-expanded={open}
@@ -97,13 +100,13 @@ export function Navbar() {
                   aria-current={isActive(n.href) ? "page" : undefined}
                   className={`block rounded-xl px-4 py-3 text-lg font-medium ${isActive(n.href) ? "bg-royal/10 text-link" : "hover:bg-bg-soft"}`}
                 >
-                  {n.label}
+                  <T en={n.label} hi={n.hi} />
                 </Link>
               </li>
             ))}
           </ul>
           <Button href="/contact" className="mt-6 w-full">
-            Talk to us
+            <T en="Talk to us" hi="बात करें" />
           </Button>
         </nav>
       </dialog>

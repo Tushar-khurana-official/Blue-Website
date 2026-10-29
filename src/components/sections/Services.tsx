@@ -4,15 +4,16 @@ import { services } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/components/ui/T";
 
 export function Services() {
   return (
     <section id="services" aria-labelledby="services-title" className="container-x py-20 md:py-28">
       <SectionHeading
         id="services-title"
-        eyebrow="Our services"
-        title={<>Three ways to grow, <span className="text-gradient">one trusted partner</span></>}
-        intro="Shares, mutual funds and property: guidance on all three from one person who knows your whole picture."
+        eyebrow={<T en="Our services" hi="हमारी सेवाएँ" />}
+        title={<T en={<>Three ways to grow, <span className="text-gradient">one trusted partner</span></>} hi={<>बढ़ने के तीन रास्ते, <span className="text-gradient">एक भरोसेमंद साथी</span></>} />}
+        intro={<T en="Shares, mutual funds and property: guidance on all three from one person who knows your whole picture." hi="शेयर, म्यूचुअल फंड और प्रॉपर्टी: तीनों पर मार्गदर्शन, उस व्यक्ति से जो आपकी पूरी तस्वीर जानता है।" />}
       />
       <Reveal as="ul" className="mt-14 grid gap-6 md:grid-cols-3">
         {services.map((s, n) => (

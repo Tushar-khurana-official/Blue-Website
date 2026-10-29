@@ -3,19 +3,20 @@ import Link from "next/link";
 import { goals } from "@/lib/content";
 import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/components/ui/T";
 
 export function Goals() {
   return (
     <section id="goals" aria-labelledby="goals-title" className="container-x py-20 md:py-28">
       <SectionHeading
         id="goals-title"
-        eyebrow="Goals we plan for"
-        title={<>Start with the goal, <span className="text-gradient">not the product</span></>}
-        intro="Each goal gets its own date, amount and mix of investments. The closer the date, the less risk the money should carry."
+        eyebrow={<T en="Goals we plan for" hi="जिन लक्ष्यों के लिए हम प्लान बनाते हैं" />}
+        title={<T en={<>Start with the goal, <span className="text-gradient">not the product</span></>} hi={<>शुरुआत लक्ष्य से, <span className="text-gradient">प्रोडक्ट से नहीं</span></>} />}
+        intro={<T en="Each goal gets its own date, amount and mix of investments. The closer the date, the less risk the money should carry." hi="हर लक्ष्य की अपनी तारीख, रकम और निवेश का मिश्रण होता है। तारीख जितनी पास, पैसे पर जोखिम उतना कम होना चाहिए।" />}
       />
       <p className="mt-8 flex items-center justify-center gap-3 text-sm text-muted">
         <span aria-hidden="true" className="h-0.5 w-16 rounded bg-gradient-to-r from-sky to-royal" />
-        Sorted by how long you have
+        <T en="Sorted by how long you have" hi="समय के हिसाब से क्रम में" />
         <span aria-hidden="true" className="h-0.5 w-16 rounded bg-gradient-to-r from-royal to-sky" />
       </p>
       <Reveal as="ol" className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site } from "@/config/site";
 import { fundHouses } from "@/lib/content";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { T } from "@/components/ui/T";
 
 /** Founder quote, the fund-house marquee and the distributor disclosure. */
 export function FundHouses() {
@@ -22,9 +23,9 @@ export function FundHouses() {
       <div className="mt-24">
         <SectionHeading
           id="fh-title"
-          eyebrow="Fund houses we work with"
-          title={<>Your money goes to <span className="text-gradient">the fund house</span></>}
-          intro="Your money is invested directly with the fund house. It never sits with us."
+          eyebrow={<T en="Fund houses we work with" hi="जिन फंड हाउस के साथ हम काम करते हैं" />}
+          title={<T en={<>Your money goes to <span className="text-gradient">the fund house</span></>} hi={<>आपका पैसा सीधे <span className="text-gradient">फंड हाउस में जाता है</span></>} />}
+          intro={<T en="Your money is invested directly with the fund house. It never sits with us." hi="आपका पैसा सीधे फंड हाउस में निवेश होता है। यह कभी हमारे पास नहीं रहता।" />}
         />
       </div>
       <div className="ticker marquee mt-12 overflow-hidden" tabIndex={0} aria-label="Fund houses (pauses on hover or focus)" role="region">

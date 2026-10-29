@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /** Compact navy header for inner pages. */
-export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string; title: ReactNode; intro?: ReactNode; children?: ReactNode }) {
+export function PageHero({ eyebrow, title, intro, children }: { eyebrow: ReactNode; title: ReactNode; intro?: ReactNode; children?: ReactNode }) {
   return (
     <section className="hero-bg relative overflow-hidden">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">

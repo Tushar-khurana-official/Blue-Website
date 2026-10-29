@@ -10,10 +10,12 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { FundHouses } from "@/components/sections/FundHouses";
 import { Clients } from "@/components/sections/Clients";
 import { Faq } from "@/components/sections/Faq";
+import { Reviews } from "@/components/sections/Reviews";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { faqs } from "@/lib/content";
+import { T } from "@/components/ui/T";
 
 /**
  * Each below-the-fold section sits in its own <Suspense> boundary. Everything is still server-rendered,
@@ -36,9 +38,9 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading
             id="calc-title"
-            eyebrow="Try the numbers"
-            title={<>What a monthly SIP <span className="text-gradient">could become</span></>}
-            intro="Move the sliders. The numbers are an illustration at an assumed return, not a forecast."
+            eyebrow={<T en="Try the numbers" hi="नंबर आज़माएँ" />}
+            title={<T en={<>What a monthly SIP <span className="text-gradient">could become</span></>} hi={<>मासिक SIP <span className="text-gradient">कितना बन सकता है</span></>} />}
+            intro={<T en="Move the sliders. The numbers are an illustration at an assumed return, not a forecast." hi="स्लाइडर चलाएँ। ये आंकड़े अनुमानित रिटर्न पर एक उदाहरण हैं, भविष्यवाणी नहीं।" />}
           />
           <div className="mt-12">
             <Suspense>
@@ -53,6 +55,7 @@ export default function Home() {
       <Suspense><WhyUs /></Suspense>
       <Suspense><FundHouses /></Suspense>
       <Suspense><Clients /></Suspense>
+      <Suspense><Reviews /></Suspense>
       <Suspense><Faq /></Suspense>
       <Suspense><ContactForm /></Suspense>
     </>
