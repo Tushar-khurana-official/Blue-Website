@@ -30,7 +30,7 @@ export default function StockMarketPage() {
           <p>
             <strong>Risk disclosure:</strong> Investments in the securities market are subject to market risks; read all related documents
             carefully before investing. 9 out of 10 individual traders in the equity futures and options segment incurred net losses (SEBI
-            study). SEBI registration: {site.registration.sebi}.
+            study).{site.registration.sebi && ` SEBI registration: ${site.registration.sebi}.`}
           </p>
         </div>
       </section>

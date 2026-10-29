@@ -5,42 +5,71 @@
 
 export const services = [
   {
-    slug: "sip",
-    icon: "repeat",
-    title: "SIP Planning",
-    body: "Start a systematic investment plan from ₹500 a month. We map each SIP to a goal, set the right amount and step it up as your income grows.",
-    points: ["Goal-based SIP amounts", "Annual step-up plans", "Auto-debit setup"],
+    slug: "stock-market",
+    icon: "trend",
+    title: "Stock Market Investments",
+    body: "Demat and trading accounts, long-term equity investing, IPO applications and derivatives, with honest guidance on risk.",
+    tags: ["Equity trading", "Long-term investments", "Derivatives", "IPO investments"],
+    cta: "Explore stock market",
   },
   {
     slug: "mutual-funds",
     icon: "pie",
-    title: "Mutual Fund Advisory",
-    body: "Equity, debt, hybrid, ELSS and index funds chosen for your risk profile and time horizon, with regular reviews and rebalancing.",
-    points: ["Risk profiling", "Scheme selection", "Portfolio reviews"],
+    title: "Mutual Funds Investments",
+    body: "SIPs, lump sum investments and bond funds chosen for your goals, with a written plan and regular reviews.",
+    tags: ["SIP", "Lump sum", "Bonds", "Wealth creation solutions"],
+    cta: "Explore mutual funds",
   },
   {
-    slug: "stock-market",
-    icon: "candles",
-    title: "Stock Market Guidance",
-    body: "Demat account opening, long-term equity investing, IPO applications and research-backed guidance, with clear explanations of risk.",
-    points: ["Demat & trading account", "Long-term portfolios", "IPO assistance"],
+    slug: "real-estate",
+    icon: "home",
+    title: "Real Estate Advisory",
+    body: "Residential, commercial and plot investments in and around Jodhpur, with location checks and paperwork guidance.",
+    tags: ["Residential", "Commercial", "Plots", "Property investment guidance"],
+    cta: "Explore real estate advisory",
   },
+] as const;
+
+/** Trust strip under the hero. */
+export const credentials = [
+  { icon: "trend", title: "Stock Market", detail: "Equity · IPO · F&O" },
+  { icon: "pie", title: "AMFI Registered", detail: "Mutual fund distributor" },
+  { icon: "home", title: "Real Estate", detail: "Residential · Commercial · Plots" },
+  { icon: "award", title: "NISM Series V-A", detail: "Certified" },
+  { icon: "award", title: "NISM Series VIII", detail: "Certified" },
+] as const;
+
+export const values = [
+  { icon: "shield", title: "Trust & Transparency", body: "You see what you invest in, what it costs and what we earn. No hidden charges, no pressure." },
+  { icon: "user", title: "Expert Guidance", body: "Guidance grounded in research and experience across shares, mutual funds and property." },
+  { icon: "trend", title: "Wealth Creation", body: "Disciplined, long-term investing that compounds, rather than chasing quick returns." },
+  { icon: "lock", title: "Secure Future", body: "Plans built around your family's goals, with risk kept to what you can live with." },
+] as const;
+
+/** Sorted by how far away the goal is. */
+export const goals = [
+  { when: "25 years away", title: "Retire without a pay cut", body: "A corpus sized to your real expenses, indexed for inflation, and drawn down in a sequence that survives a bad first decade.", tags: ["Equity mutual funds", "NPS", "Debt laddering"] },
+  { when: "15 years away", title: "Fund the degree, not the loan", body: "Education inflation runs near 10%. We work backwards from the fee in the year your child enrols.", tags: ["Equity mutual funds", "Sukanya Samriddhi", "Gift deeds"] },
+  { when: "10 years away", title: "Build the first crore", body: "An SIP you can sustain through a drawdown, and a rebalancing rule agreed in advance.", tags: ["Equity mutual funds", "Index funds", "Hybrid funds"] },
+  { when: "6 years away", title: "Buy the house in cash-flow terms", body: "A down payment this close to spending has no business sitting in equity. Park it where the date is safe.", tags: ["Short-duration debt", "Arbitrage funds", "FDs"] },
+  { when: "3 years away", title: "Save tax without wrecking liquidity", body: "ELSS has the shortest lock-in under Section 80C. Use it deliberately, not as a March panic purchase.", tags: ["ELSS", "NPS Tier I", "80C planning"] },
+  { when: "Now", title: "Protect the plan itself", body: "Term cover and a health floater sized to your liabilities. Insurance is not an investment, and it is not sold as one.", tags: ["Term life", "Health floater", "Emergency fund"] },
 ] as const;
 
 export const features = [
-  { icon: "users", title: "Expert advisors", body: "Certified professionals who explain every recommendation in plain language." },
-  { icon: "target", title: "Goal-based planning", body: "Retirement, education, a home: every rupee is tied to a goal and a date." },
-  { icon: "eye", title: "Transparent process", body: "You see what you invest in, what it costs and how it is doing. No hidden charges." },
-  { icon: "badge", title: "Low-cost", body: "No account opening fee for mutual funds and clear, published charges for everything else." },
-  { icon: "shield", title: "Secure", body: "Investments are held in your own name with the fund house or depository, never with us." },
-  { icon: "headset", title: "24x7 support", body: "Reach us on WhatsApp any time; our team replies within working hours." },
+  { title: "Personalized guidance", body: "Your plan is built from your cash flows and goals, not from a model portfolio handed to everyone." },
+  { title: "Goal-oriented investing", body: "Every rupee is tied to a goal with a date, so each fund has a job and a reason to be there." },
+  { title: "Transparent communication", body: "You see what we earn before you invest, and we explain what we recommend in plain language." },
+  { title: "Regular portfolio reviews", body: "Reviews on a fixed calendar, with a written note of what changed and why." },
+  { title: "Long-term relationship", body: "The person who wrote your plan is the person who answers your call, years later." },
+  { title: "Investor education", body: "We explain the why behind each decision, so you can hold your nerve when markets wobble." },
 ] as const;
 
 export const steps = [
-  { icon: "chat", title: "Consult", body: "A free 30-minute call to understand your income, goals and comfort with risk." },
-  { icon: "clipboard", title: "Plan", body: "A written plan with goals, SIP amounts and the funds or stocks chosen for each." },
-  { icon: "rocket", title: "Invest", body: "Paperless KYC and account setup. Your SIPs start on the date you choose." },
-  { icon: "chart", title: "Track", body: "Live portfolio tracking and a review every six months, or whenever life changes." },
+  { icon: "chat", time: "45 minutes", title: "Understand your goals", body: "A conversation about your income, obligations and worries. No product is named in this meeting." },
+  { icon: "clipboard", time: "5 working days", title: "Build your strategy", body: "A written plan: goals, dates, rupee amounts, the monthly figure, and the specific schemes with the reason for each." },
+  { icon: "rocket", time: "2 working days", title: "Invest and monitor", body: "KYC, folios and mandates set up through a registered platform. SIPs start on the date you pick." },
+  { icon: "chart", time: "Every 6 months", title: "Review and refine", body: "Reviews that change something: rebalance if allocation drifts past the agreed band, step up SIPs after a raise, leave the rest alone." },
 ] as const;
 
 /** Risk level 1 (low) to 5 (very high), always shown with a text label too. */
@@ -64,29 +93,36 @@ export const tickers = [
   { name: "GOLD (₹/10g)", value: 76450, change: 0.18 },
 ] as const;
 
-/** SAMPLE testimonials. Replace with real, consented client reviews; never publish invented ones. */
-export const testimonials = [
-  { name: "Client name", role: "Software engineer, Pune", quote: "They explained exactly why each fund was in my plan. For the first time my SIPs feel connected to a goal." },
-  { name: "Client name", role: "Doctor, Jaipur", quote: "Paperless setup in one evening, and the six-monthly review actually changed things when my income went up." },
-  { name: "Client name", role: "Business owner, Surat", quote: "No pressure to buy anything. They told me when to do nothing, which turned out to be the best advice." },
-  { name: "Client name", role: "Teacher, Lucknow", quote: "The calculators and plain-language explanations made it easy to start with a small SIP and build up." },
+export const fundHouses = [
+  "Aditya Birla Sun Life Mutual Fund", "Axis Mutual Fund", "DSP Mutual Fund", "HDFC Mutual Fund", "ICICI Prudential Mutual Fund",
+  "Kotak Mahindra Mutual Fund", "Mirae Asset Mutual Fund", "Nippon India Mutual Fund", "Parag Parikh Mutual Fund", "SBI Mutual Fund",
+  "Tata Mutual Fund", "UTI Mutual Fund",
 ] as const;
 
-export const insights = [
-  { slug: "what-is-sip", tag: "Basics", minutes: 4, title: "What is a SIP, and why does it work?", body: "How investing a fixed amount every month smooths out market ups and downs through rupee-cost averaging." },
-  { slug: "direct-vs-regular", tag: "Mutual funds", minutes: 5, title: "Direct vs regular plans: what's the difference?", body: "The same portfolio, two expense ratios. What you pay for, and how to decide which suits you." },
-  { slug: "asset-allocation", tag: "Planning", minutes: 6, title: "Asset allocation matters more than fund picking", body: "Why the split between equity, debt and gold drives most of your long-term result." },
+export const realEstate = [
+  { icon: "home", title: "Residential", body: "Flats, independent houses and villas for living in or renting out, with a realistic view of rental yield and resale." },
+  { icon: "building", title: "Commercial", body: "Shops and office space where the location, footfall and lease terms decide the return." },
+  { icon: "map", title: "Plots", body: "Land in developing areas around Jodhpur, checked for approvals, title and access before you commit." },
+] as const;
+
+export const realEstateChecks = [
+  "RERA registration of the project and the agent",
+  "Clear title and the chain of ownership documents",
+  "Approved layout, land use and building permissions",
+  "Location: roads, water, schools and future development plans",
+  "All-in cost: stamp duty, registration, maintenance and taxes",
+  "How easily you could sell, and what rent is realistic",
 ] as const;
 
 export const faqs = [
+  { q: "Is the first consultation really free?", a: "Yes. The first conversation is free and names no products. We listen, ask questions and tell you honestly whether we can help." },
+  { q: "Are you an investment adviser?", a: "No. Shree Investments is an AMFI-registered mutual fund distributor, not a SEBI-registered investment adviser. We are paid trail commission by the fund house on the regular plans we distribute, and we disclose it before you invest." },
   { q: "What is a SIP?", a: "A Systematic Investment Plan lets you invest a fixed amount in a mutual fund at regular intervals, usually monthly, by auto-debit from your bank account." },
   { q: "What is the minimum amount to start a SIP?", a: "Many schemes accept SIPs from ₹500 a month. The exact minimum is stated in each scheme's documents." },
-  { q: "Can I stop or pause my SIP?", a: "Yes. You can pause or stop a SIP at any time. Units already bought stay invested until you redeem them, subject to any exit load or lock-in." },
   { q: "Are mutual fund returns guaranteed?", a: "No. Mutual fund returns depend on market performance and can be negative. Any figures on this site are illustrations based on assumed returns." },
   { q: "What documents do I need to invest?", a: "PAN, Aadhaar (or another address proof), a bank account and a photograph for one-time KYC. The whole process can be done online." },
-  { q: "How are mutual funds taxed?", a: "Gains are taxed when you redeem. The rate depends on the fund type and how long you held the units. Tax rules change, so check the current rates with a tax professional." },
-  { q: "What is ELSS?", a: "Equity Linked Savings Schemes are equity mutual funds with a three-year lock-in that qualify for a deduction under Section 80C under the old tax regime." },
+  { q: "Do you help with property in Jodhpur?", a: "Yes. We help with residential, commercial and plot investments in and around Jodhpur, including location checks and paperwork. Real estate is not regulated by SEBI, so always check RERA registration before investing." },
   { q: "Is my money safe with you?", a: "Your money goes directly from your bank account to the fund house, and units are held in your own name. We never hold client money." },
 ] as const;
 
-export const interests = ["SIP planning", "Mutual funds", "Stock market", "Tax saving (ELSS)", "Retirement planning", "Not sure yet"] as const;
+export const interests = ["Mutual funds / SIP", "Stock market", "Real estate", "Tax saving (ELSS)", "Retirement planning", "Not sure yet"] as const;

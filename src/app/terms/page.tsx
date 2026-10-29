@@ -13,11 +13,11 @@ export default function Terms() {
       <h2>Risk</h2>
       <p>{DISCLAIMER} Investments in the securities market are subject to market risks.</p>
       <h2>Registration</h2>
-      <p>AMFI ARN: {site.registration.arn} · EUIN: {site.registration.euin} · SEBI registration: {site.registration.sebi}.</p>
+      <p>AMFI ARN: {site.registration.arn} · EUIN: {site.registration.euin}.{site.registration.sebi && ` SEBI registration: ${site.registration.sebi}.`}</p>
       <h2>Third-party links</h2>
       <p>Links to other websites are provided for convenience. We are not responsible for their content.</p>
       <h2>Governing law</h2>
-      <p>These terms are governed by the laws of India. Courts at [City] have exclusive jurisdiction.</p>
+      <p>These terms are governed by the laws of India. Courts at {site.city} have exclusive jurisdiction.</p>
     </Legal>
   );
 }

@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { services } from "@/lib/content";
 import { Icon } from "@/components/ui/Icon";
@@ -7,32 +7,30 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Services() {
   return (
-    <section aria-labelledby="services-title" className="container-x py-20 md:py-28">
+    <section id="services" aria-labelledby="services-title" className="container-x py-20 md:py-28">
       <SectionHeading
         id="services-title"
-        eyebrow="What we do"
-        title={<>Everything you need to <span className="text-gradient">invest with confidence</span></>}
-        intro="Three services, one team that knows your whole picture."
+        eyebrow="Our services"
+        title={<>Three ways to grow, <span className="text-gradient">one trusted partner</span></>}
+        intro="Shares, mutual funds and property: guidance on all three from one person who knows your whole picture."
       />
       <Reveal as="ul" className="mt-14 grid gap-6 md:grid-cols-3">
-        {services.map((s) => (
+        {services.map((s, n) => (
           <RevealItem as="li" key={s.slug}>
-            <article className="card-hover glass flex h-full flex-col rounded-[24px] p-7">
+            <article className="card-hover group flex h-full flex-col rounded-[24px] border border-line bg-surface p-8 shadow-[0_10px_30px_rgb(10_31_68/0.06)]">
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-sky text-white shadow-[0_12px_30px_-12px_rgb(30_94_255/0.8)]">
                 <Icon name={s.icon} className="h-7 w-7" />
               </span>
-              <h3 className="mt-6 text-xl font-bold">{s.title}</h3>
-              <p className="mt-3 flex-1 text-muted">{s.body}</p>
-              <ul className="mt-5 space-y-2 text-sm">
-                {s.points.map((p) => (
-                  <li key={p} className="flex items-center gap-2">
-                    <Check aria-hidden="true" className="h-4 w-4 text-accent-text" />
-                    {p}
-                  </li>
+              <p className="mt-6 font-display text-sm font-semibold tracking-[0.15em] text-link">0{n + 1}</p>
+              <h3 className="mt-1 text-[1.35rem] font-bold">{s.title}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${s.title} includes`}>
+                {s.tags.map((t) => (
+                  <li key={t} className="rounded-full bg-[#eaf1ff] px-3 py-1.5 text-[0.8rem] font-medium text-[#1e3a8a]">{t}</li>
                 ))}
               </ul>
-              <Link href={`/${s.slug}`} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-link hover:gap-2.5 transition-[gap]">
-                Learn more<span className="sr-only"> about {s.title}</span> <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              <p className="mt-4 flex-1 text-muted">{s.body}</p>
+              <Link href={`/${s.slug}`} className="mt-6 inline-flex items-center gap-2 font-semibold text-link">
+                {s.cta} <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </article>
           </RevealItem>

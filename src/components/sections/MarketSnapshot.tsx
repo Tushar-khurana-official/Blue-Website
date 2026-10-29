@@ -17,7 +17,7 @@ export function MarketSnapshot() {
           <p className="font-display font-semibold">Indices</p>
           <span className="rounded-full bg-royal px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-white">Sample data</span>
         </div>
-        <div className="relative overflow-x-auto">
+        <div className="relative overflow-x-auto" tabIndex={0} role="region" aria-label="Market snapshot table (scrolls sideways)">
           <table className="w-full min-w-[480px] text-sm">
             <caption className="sr-only">Sample index levels and daily change</caption>
             <thead className="text-left text-xs uppercase tracking-wider text-muted">

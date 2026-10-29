@@ -1,13 +1,12 @@
 import {
-  BadgeIndianRupee, ChartCandlestick, ChartLine, ChartPie, ClipboardList, Eye, Headset,
-  MessageCircle, Repeat, Rocket, ShieldCheck, Target, Users, type LucideIcon,
+  Award, Building2, ChartLine, ChartPie, ClipboardList, House, Lock, MapPinned, MessageCircle, Rocket, ShieldCheck,
+  TrendingUp, UserRound, type LucideIcon,
 } from "lucide-react";
 
 /** Content files refer to icons by name; this maps them to Lucide (inline SVG). */
 const map: Record<string, LucideIcon> = {
-  repeat: Repeat, pie: ChartPie, candles: ChartCandlestick, users: Users, target: Target, eye: Eye,
-  badge: BadgeIndianRupee, shield: ShieldCheck, headset: Headset, chat: MessageCircle,
-  clipboard: ClipboardList, rocket: Rocket, chart: ChartLine,
+  trend: TrendingUp, pie: ChartPie, home: House, award: Award, shield: ShieldCheck, user: UserRound, lock: Lock,
+  building: Building2, map: MapPinned, chat: MessageCircle, clipboard: ClipboardList, rocket: Rocket, chart: ChartLine,
 };
 
 export function Icon({ name, className = "h-6 w-6" }: { name: string; className?: string }) {

@@ -1,15 +1,17 @@
 "use client";
 
-import { CheckCircle2, Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { site } from "@/config/site";
 import { interests } from "@/lib/content";
 import { validate, type Enquiry, type Errors } from "@/lib/validate";
 
+const tile = "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-royal text-white";
 const input =
   "mt-1.5 block w-full rounded-xl border bg-surface px-4 py-3 text-fg placeholder:text-muted/70 transition-colors focus:border-royal focus:outline-none focus:ring-4 focus:ring-royal/15";
 
 export function ContactForm() {
+  const c = site.contact;
   const [form, setForm] = useState<Enquiry>({ name: "", phone: "", email: "", interest: "", message: "", consent: false, website: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -56,29 +58,42 @@ export function ContactForm() {
         <div className="lg:col-span-2">
           <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" />Contact</p>
           <h2 id="contact-title" className="mt-3 text-3xl font-bold md:text-[2.6rem] md:leading-tight">
-            Let&apos;s plan your <span className="text-gradient">next step</span>
+            Start a <span className="text-gradient">conversation</span>
           </h2>
-          <p className="mt-4 text-lg text-muted">Tell us a little about your goals. We usually reply within one working day.</p>
+          <p className="mt-4 text-lg text-muted">
+            The first conversation is free and names no products. We listen, ask questions, and tell you honestly whether we can help.
+          </p>
           <ul className="mt-8 space-y-4">
+            <li className="glass flex items-center gap-4 rounded-2xl p-4">
+              <span className={tile}><Phone aria-hidden="true" className="h-5 w-5" /></span>
+              <span>
+                <span className="block text-xs text-muted">Call us</span>
+                {c.phones.map((p) => (
+                  <a key={p.href} href={`tel:${p.href}`} className="block font-semibold hover:text-link">{p.label}</a>
+                ))}
+              </span>
+            </li>
             <li>
-              <a href={`tel:${site.contact.phoneHref}`} className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-royal text-white"><Phone aria-hidden="true" className="h-5 w-5" /></span>
-                <span><span className="block text-xs text-muted">Call us</span><span className="font-semibold">{site.contact.phone}</span></span>
+              <a href={`https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappText)}`} target="_blank" rel="noopener noreferrer" className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
+                <span className={`${tile} !bg-[#1f9d55]`}><MessageCircle aria-hidden="true" className="h-5 w-5" /></span>
+                <span><span className="block text-xs text-muted">WhatsApp</span><span className="font-semibold">Message us on WhatsApp</span><span className="sr-only"> (opens in a new tab)</span></span>
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.contact.email}`} className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-royal text-white"><Mail aria-hidden="true" className="h-5 w-5" /></span>
-                <span><span className="block text-xs text-muted">Email</span><span className="font-semibold">{site.contact.email}</span></span>
+              <a href={`mailto:${c.email}`} className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
+                <span className={tile}><Mail aria-hidden="true" className="h-5 w-5" /></span>
+                <span className="min-w-0"><span className="block text-xs text-muted">Email</span><span className="block break-all font-semibold">{c.email}</span></span>
               </a>
             </li>
             <li className="glass flex items-center gap-4 rounded-2xl p-4">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-royal text-white"><MapPin aria-hidden="true" className="h-5 w-5" /></span>
-              <span><span className="block text-xs text-muted">Office</span><span className="font-semibold">{site.contact.address}</span></span>
-            </li>
-            <li className="glass flex items-center gap-4 rounded-2xl p-4">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-royal text-white"><Clock aria-hidden="true" className="h-5 w-5" /></span>
-              <span><span className="block text-xs text-muted">Hours</span><span className="font-semibold">{site.contact.hours}</span></span>
+              <span className={tile}><MapPin aria-hidden="true" className="h-5 w-5" /></span>
+              <span>
+                <span className="block text-xs text-muted">Visit</span>
+                <span className="font-semibold">{c.address}</span>
+                <a href={c.mapUrl} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm font-semibold text-link">
+                  View on Google Maps<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </span>
             </li>
           </ul>
         </div>

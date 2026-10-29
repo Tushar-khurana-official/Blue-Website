@@ -18,7 +18,7 @@ export default function SipPage() {
       >
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact" size="lg">Start SIP</Button>
-          <Button href="#calculator" size="lg" variant="outline">Try the calculator</Button>
+          <Button href="#calculator" size="lg" variant="dark">Try the calculator</Button>
         </div>
       </PageHero>
       <section id="calculator" aria-label="SIP calculator" className="container-x py-16 md:py-24">

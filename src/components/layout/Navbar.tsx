@@ -8,7 +8,7 @@ import { nav } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 
-/** Sticky navbar that turns glassy and blurred once the page scrolls. Mobile: native <dialog> drawer. */
+/** Sticky navy navbar that turns more opaque once the page scrolls. Mobile: native <dialog> drawer. */
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -34,12 +34,12 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-[background-color,box-shadow,border-color] duration-300 ${
-        scrolled ? "glass !rounded-none border-x-0 border-t-0" : "border-b border-transparent bg-transparent"
+      className={`sticky top-0 z-40 border-b border-white/10 backdrop-blur-md transition-[background-color,box-shadow] duration-300 ${
+        scrolled ? "bg-navy/95 shadow-[0_10px_30px_rgb(2_10_30/0.3)]" : "bg-navy/80"
       }`}
     >
       <div className="container-x flex h-18 items-center justify-between gap-4">
-        <Logo />
+        <Logo tone="light" />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {nav.map((n) => (
@@ -47,12 +47,12 @@ export function Navbar() {
                 <Link
                   href={n.href}
                   aria-current={isActive(n.href) ? "page" : undefined}
-                  className={`relative rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-link ${
-                    isActive(n.href) ? "text-link" : "text-fg"
+                  className={`relative rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-white ${
+                    isActive(n.href) ? "text-white" : "text-on-dark"
                   }`}
                 >
                   {n.label}
-                  {isActive(n.href) && <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-royal to-sky" />}
+                  {isActive(n.href) && <span aria-hidden="true" className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-sky" />}
                 </Link>
               </li>
             ))}
@@ -60,11 +60,11 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline-flex">
-            <Button href="/contact">Start Investing</Button>
+            <Button href="/contact">Talk to us</Button>
           </span>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/25 text-white lg:hidden"
             aria-label="Open menu"
             aria-haspopup="dialog"
             aria-expanded={open}
@@ -103,7 +103,7 @@ export function Navbar() {
             ))}
           </ul>
           <Button href="/contact" className="mt-6 w-full">
-            Start Investing
+            Talk to us
           </Button>
         </nav>
       </dialog>

@@ -21,12 +21,18 @@ export const orgSchema = {
   url: site.url,
   telephone: site.contact.phoneHref,
   email: site.contact.email,
-  address: site.contact.address,
-  areaServed: "IN",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "13 Mahaveerpuram City, Near Chopasni School, Chopasni",
+    addressLocality: site.city,
+    addressRegion: "Rajasthan",
+    addressCountry: "IN",
+  },
+  areaServed: site.city,
   sameAs: site.social.map((s) => s.href),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Services",
-    itemListElement: ["SIP Planning", "Mutual Fund Advisory", "Stock Market Guidance"].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n } })),
+    itemListElement: ["Stock Market Investments", "Mutual Funds Investments", "Real Estate Advisory"].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n } })),
   },
 };

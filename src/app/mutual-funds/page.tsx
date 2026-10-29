@@ -18,7 +18,7 @@ export default function MutualFundsPage() {
       >
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact" size="lg">Get a free portfolio review</Button>
-          <Button href="/calculators" size="lg" variant="outline">Open calculators</Button>
+          <Button href="/calculators" size="lg" variant="dark">Open calculators</Button>
         </div>
       </PageHero>
       <FundCategories />

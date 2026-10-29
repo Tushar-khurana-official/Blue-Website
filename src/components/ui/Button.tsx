@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-type Variant = "primary" | "outline" | "ghost" | "white";
+type Variant = "primary" | "outline" | "ghost" | "white" | "dark";
 
 const styles: Record<Variant, string> = {
   primary: "bg-royal text-white shadow-[0_10px_30px_-10px_rgb(30_94_255/0.7)] hover:bg-royal-hover",
   outline: "border border-line bg-surface/70 text-fg backdrop-blur hover:border-royal hover:text-link",
   ghost: "text-link hover:bg-royal/10",
   white: "bg-white text-navy shadow-lg hover:bg-sky-50",
+  /** Outline for navy backgrounds. */
+  dark: "border border-white/35 bg-white/5 text-white hover:bg-white/15",
 };
 
 /** Pill button with a small press micro-interaction. Renders a Link when given href. */

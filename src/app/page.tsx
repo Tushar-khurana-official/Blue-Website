@@ -1,16 +1,15 @@
 import { Suspense } from "react";
 import { Hero } from "@/components/sections/Hero";
-import { Ticker } from "@/components/sections/Ticker";
 import { Services } from "@/components/sections/Services";
+import { Values } from "@/components/sections/Values";
 import { Calculator } from "@/components/sections/Calculator";
-import { WhyUs } from "@/components/sections/WhyUs";
+import { Goals } from "@/components/sections/Goals";
+import { Kyc } from "@/components/sections/Kyc";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { FundCategories } from "@/components/sections/FundCategories";
-import { MarketSnapshot } from "@/components/sections/MarketSnapshot";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Insights } from "@/components/sections/Insights";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { FundHouses } from "@/components/sections/FundHouses";
+import { Clients } from "@/components/sections/Clients";
 import { Faq } from "@/components/sections/Faq";
-import { CtaBanner } from "@/components/sections/CtaBanner";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -31,15 +30,15 @@ export default function Home() {
         }}
       />
       <Hero />
-      <Suspense><Ticker /></Suspense>
       <Suspense><Services /></Suspense>
-      <section id="calculator" aria-labelledby="calc-title" className="bg-bg-soft py-20 md:py-28">
+      <Suspense><Values /></Suspense>
+      <section id="tools" aria-labelledby="calc-title" className="border-y border-line bg-surface py-20 md:py-28">
         <div className="container-x">
           <SectionHeading
             id="calc-title"
-            eyebrow="SIP calculator"
-            title={<>See what your money <span className="text-gradient">could become</span></>}
-            intro="Move the sliders to estimate the future value of a SIP or a one-time investment."
+            eyebrow="Try the numbers"
+            title={<>What a monthly SIP <span className="text-gradient">could become</span></>}
+            intro="Move the sliders. The numbers are an illustration at an assumed return, not a forecast."
           />
           <div className="mt-12">
             <Suspense>
@@ -48,14 +47,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Suspense><WhyUs /></Suspense>
+      <Suspense><Goals /></Suspense>
+      <Suspense><Kyc /></Suspense>
       <Suspense><HowItWorks /></Suspense>
-      <Suspense><FundCategories /></Suspense>
-      <Suspense><MarketSnapshot /></Suspense>
-      <Suspense><Testimonials /></Suspense>
-      <Suspense><Insights /></Suspense>
+      <Suspense><WhyUs /></Suspense>
+      <Suspense><FundHouses /></Suspense>
+      <Suspense><Clients /></Suspense>
       <Suspense><Faq /></Suspense>
-      <Suspense><CtaBanner /></Suspense>
       <Suspense><ContactForm /></Suspense>
     </>
   );

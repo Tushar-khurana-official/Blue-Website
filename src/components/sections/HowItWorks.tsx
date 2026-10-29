@@ -9,8 +9,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function HowItWorks() {
   const reduce = useReducedMotion();
   return (
-    <section aria-labelledby="how-title" className="bg-bg-soft py-20 md:py-28"><div className="container-x">
-      <SectionHeading id="how-title" eyebrow="How it works" title={<>Four simple steps to <span className="text-gradient">start investing</span></>} />
+    <section id="process" aria-labelledby="how-title" className="bg-bg-soft py-20 md:py-28"><div className="container-x">
+      <SectionHeading id="how-title" eyebrow="How it works" title={<>Four steps. <span className="text-gradient">The last one never ends.</span></>} intro="Most of the value is in the fourth step." />
       <div className="relative mt-16">
         <div aria-hidden="true" className="absolute left-6 top-0 h-full w-0.5 bg-line md:left-0 md:top-7 md:h-0.5 md:w-full" />
         <m.div
@@ -42,7 +42,10 @@ export function HowItWorks() {
               <span className="absolute left-0 top-0 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-sky text-white shadow-[0_12px_30px_-12px_rgb(30_94_255/0.8)] ring-8 ring-bg md:relative">
                 <Icon name={s.icon} />
               </span>
-              <p className="mt-0 font-display text-sm font-bold text-accent-text md:mt-6">Step {i + 1}</p>
+              <p className="mt-0 flex flex-wrap items-center gap-2 md:mt-6">
+                <span className="font-display text-sm font-bold text-accent-text">Step {i + 1}</span>
+                <span className="rounded-full bg-[#e6f4ff] px-2.5 py-0.5 text-xs font-semibold text-[#075985]">{s.time}</span>
+              </p>
               <h3 className="mt-1 text-xl font-bold">{s.title}</h3>
               <p className="mt-2 text-muted">{s.body}</p>
             </m.li>

@@ -2,50 +2,50 @@
  * site.ts: every business-specific value lives here. Replace the [bracketed] placeholders before launch.
  */
 export const site = {
-  name: "[Brand Name]",
-  tagline: "Grow your wealth, one SIP at a time",
+  name: "Shree Investments",
+  city: "Jodhpur",
+  tagline: "Smart investments. Strong growth. Secure future.",
   description:
-    "SIP planning, mutual fund guidance and stock market services for Indian investors. Goal-based plans, transparent costs and a team you can reach.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com").replace(/\/$/, ""),
+    "Shree Investments helps families in Jodhpur grow their wealth through the stock market, mutual funds and real estate, with honest guidance, clear risks and a plan you can follow.",
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://shree-investments.vercel.app").replace(/\/$/, ""),
+
+  founder: { name: "Manish Purohit", role: "Founder" },
+  quote: "The best plan is the one you can actually keep.",
 
   contact: {
-    phone: "+91 90000 00000", // [Phone]
-    phoneHref: "+919000000000",
-    whatsapp: "919000000000", // country code + number, digits only
+    phones: [
+      { label: "+91 98299 47444", href: "+919829947444" },
+      { label: "+91 93146 47444", href: "+919314647444" },
+    ],
+    phone: "+91 98299 47444",
+    phoneHref: "+919829947444",
+    whatsapp: "919829947444", // country code + number, digits only
     whatsappText: "Hi, I would like a free investment consultation.",
-    email: "hello@example.com", // [Email]
-    address: "[Office address, City, State PIN]",
-    hours: "Mon–Sat, 9:30 am – 6:30 pm",
+    email: "Manish.p2001us@gmail.com",
+    address: "13 Mahaveerpuram City, Near Chopasni School, Chopasni, Jodhpur, Rajasthan",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=13+Mahaveerpuram+City+Chopasni+Jodhpur+Rajasthan",
   },
 
-  /** Compliance: shown in the footer and legal pages. Replace with real registration details. */
+  /** Compliance: shown in the hero strip, footer and legal pages. */
   registration: {
-    arn: "[ARN / Registration No.]", // AMFI ARN for mutual fund distribution
+    arn: "[ARN-XXXXXX]", // AMFI ARN for mutual fund distribution (required on all communication)
     euin: "[EUIN]",
-    sebi: "[SEBI Registration No.]", // e.g. stock broker / Authorised Person / RIA registration, as applicable
+    sebi: "", // only if you hold one (e.g. Authorised Person / stock broker); leave empty to hide
   },
+  certifications: ["NISM Series V-A", "NISM Series VIII"],
 
-  /** Counters on the home page. Placeholder figures: replace with verified numbers before launch. */
-  stats: [
-    { value: 10000, suffix: "+", label: "Investors" },
-    { value: 500, prefix: "₹", suffix: " Cr+", label: "Assets advised" },
-    { value: 12, suffix: "+", label: "Years of experience" },
-    { value: 4.8, decimals: 1, suffix: "/5", label: "Client rating" },
-  ],
+  /** Client portal / app login. Leave empty and the button points to the contact section. */
+  clientLoginUrl: "",
 
-  social: [
-    { name: "Instagram", href: "https://instagram.com/" },
-    { name: "LinkedIn", href: "https://linkedin.com/" },
-    { name: "YouTube", href: "https://youtube.com/" },
-    { name: "X", href: "https://x.com/" },
-  ],
-} as const;
+  /** Add real profile URLs to show the icons in the footer. Supported: Instagram, LinkedIn, YouTube, X. */
+  social: [] as { name: string; href: string }[],
+};
 
 export const nav = [
   { label: "Home", href: "/" },
-  { label: "SIP", href: "/sip" },
   { label: "Mutual Funds", href: "/mutual-funds" },
   { label: "Stock Market", href: "/stock-market" },
+  { label: "Real Estate", href: "/real-estate" },
   { label: "Calculators", href: "/calculators" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
