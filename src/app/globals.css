@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Light is the default; .dark switches to the navy theme.
+   --------------------------------------------------------------------------- */
+:root {
+  --navy: #0a1f44;
+  --royal: #1e5eff; /* primary buttons (white text 5.1:1) */
+  --royal-hover: #1448d6;
+  --sky: #38bdf8; /* decorative accents */
+  --bg: #ffffff;
+  --bg-soft: #f4f8ff;
+  --surface: #ffffff;
+  --glass: rgb(255 255 255 / 0.72);
+  --text: #0a1f44;
+  --muted: #4a5a7a;
+  --border: #dbe5f7;
+  --link: #1e4fd6; /* primary used as text */
+  --accent-text: #0369a1; /* sky as readable text */
+  --success: #047857;
+  --danger: #b42318;
+  --ring: #1e5eff;
+  --shadow: 0 20px 45px -24px rgb(10 31 68 / 0.28);
+  --hero-from: #eaf1ff;
+  --hero-via: #f4f8ff;
+  --hero-to: #e0f2fe;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a1f44;
+  --bg-soft: #0d2550;
+  --surface: #10295a;
+  --glass: rgb(16 41 90 / 0.62);
+  --text: #eaf1ff;
+  --muted: #a9b8d9;
+  --border: #23407a;
+  --link: #8ab0ff;
+  --accent-text: #38bdf8;
+  --success: #34d399;
+  --danger: #ff8a80;
+  --ring: #8ab0ff;
+  --shadow: 0 24px 50px -24px rgb(0 0 0 / 0.6);
+  --hero-from: #0a1f44;
+  --hero-via: #0f2a5e;
+  --hero-to: #0b3a6e;
+  color-scheme: dark;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-royal: var(--royal);
+  --color-royal-hover: var(--royal-hover);
+  --color-sky: var(--sky);
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-glass: var(--glass);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-link: var(--link);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 22px;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5.5rem; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: var(--royal); color: #fff; }
+}
+
+@layer components {
+  .container-x { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+
+  /* Glassmorphism card */
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+    box-shadow: var(--shadow);
+  }
+
+  /* Card with lift, glow and a gradient border on hover */
+  .card-hover {
+    position: relative;
+    transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 300ms ease;
+  }
+  .card-hover::before {
+    content: "";
+    position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+    background: linear-gradient(135deg, var(--royal), var(--sky));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity 300ms ease; pointer-events: none;
+  }
+  .card-hover:hover, .card-hover:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px -28px color-mix(in srgb, var(--royal) 55%, transparent);
+  }
+  .card-hover:hover::before, .card-hover:focus-within::before { opacity: 1; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent-text);
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, var(--royal), var(--sky));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Range slider */
+  .range { -webkit-appearance: none; appearance: none; width: 100%; height: 1.5rem; background: transparent; cursor: pointer; }
+  .range::-webkit-slider-runnable-track {
+    height: 6px; border-radius: 999px;
+    background: linear-gradient(to right, var(--royal) var(--fill, 50%), var(--border) var(--fill, 50%));
+  }
+  .range::-moz-range-track { height: 6px; border-radius: 999px; background: var(--border); }
+  .range::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--royal); }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none; margin-top: -7px; width: 20px; height: 20px; border-radius: 999px;
+    background: #fff; border: 3px solid var(--royal); box-shadow: 0 2px 8px rgb(30 94 255 / 0.4);
+    transition: transform 150ms ease;
+  }
+  .range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 999px; background: #fff; border: 3px solid var(--royal); }
+  .range:active::-webkit-slider-thumb { transform: scale(1.15); }
+  .range:focus-visible { outline: none; }
+  .range:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--ring); outline-offset: 3px; }
+}
+
+/* ---------------------------------------------------------------------------
+   CSS animations (cheap, compositor-friendly). Framer Motion handles scroll reveals,
+   counters, the carousel and the accordion.
+   --------------------------------------------------------------------------- */
+/* Scroll reveal (Reveal.tsx): hidden only when JS is running, so no-JS visitors see everything. */
+.js .reveal-item { opacity: 0; transform: translateY(28px); }
+.js .revealed .reveal-item {
+  opacity: 1; transform: none;
+  transition: opacity 600ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+/* Animated hero gradient: an oversized gradient layer drifts via transform (compositor only, no repaints). */
+.hero-bg { position: relative; isolation: isolate; background: var(--hero-via); }
+.hero-bg::before {
+  content: ""; position: absolute; inset: -40%; z-index: -1;
+  background: linear-gradient(120deg, var(--hero-from) 10%, var(--hero-via) 40%, var(--hero-to) 65%, var(--hero-from) 90%);
+  animation: gradient-drift 22s ease-in-out 2.5s infinite alternate;
+  will-change: transform;
+}
+/* Glass over the moving hero: semi-opaque instead of live blur, so nothing re-blurs every frame. */
+.hero-bg .glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: color-mix(in srgb, var(--surface) 86%, transparent); }
+/* Soft floating shapes: radial gradients (no blur filter), coloured with text-* utilities. */
+.blob {
+  position: absolute; border-radius: 9999px; will-change: transform;
+  background: radial-gradient(closest-side, currentColor, transparent);
+}
+.blob-a { animation: float-a 16s ease-in-out 2.5s infinite; }
+.blob-b { animation: float-b 20s ease-in-out 2.5s infinite; }
+.blob-c { animation: float-a 24s ease-in-out 2.5s infinite reverse; }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards; }
+.fade-late { opacity: 0; animation: fade-in 0.6s ease-out 2.2s forwards; }
+.ticker-track { display: flex; width: max-content; animation: ticker 40s linear 1.5s infinite; }
+.ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
+.pulse-ring::before {
+  content: ""; position: absolute; inset: 0; border-radius: 9999px; border: 2px solid #25d366;
+  animation: pulse 2.4s ease-out 1.5s 3 both;
+}
+
+@keyframes gradient-drift { from { transform: translate3d(-8%, -6%, 0) rotate(0deg); } to { transform: translate3d(8%, 6%, 0) rotate(8deg); } }
+@keyframes float-a { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(30px, -24px, 0) scale(1.06); } }
+@keyframes float-b { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(-36px, 20px, 0) scale(0.94); } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes ticker { to { transform: translateX(-50%); } }
+@keyframes pulse { from { transform: scale(1); opacity: 0.6; } to { transform: scale(1.7); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-delay: 0s !important;
+    animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-bg::before, .blob { animation: none !important; }
+  .js .reveal-item { opacity: 1; transform: none; }
+  .ticker-track { animation: none !important; flex-wrap: wrap; width: auto; }
+  .ticker-dup { display: none; }
+}
