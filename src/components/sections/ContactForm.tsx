@@ -55,7 +55,7 @@ export function ContactForm() {
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
-      <div className="grid gap-10 lg:grid-cols-5">
+      <div className="grid items-center gap-10 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <p className="eyebrow"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky" /><T en="Contact" hi="संपर्क" /></p>
           <h2 id="contact-title" className="mt-3 text-3xl font-bold md:text-[2.6rem] md:leading-tight">
@@ -71,8 +71,8 @@ export function ContactForm() {
             <Clock aria-hidden="true" className="h-4 w-4" />
             <T en="We call back within one working day." hi="हम एक कार्य-दिवस के भीतर कॉल बैक करते हैं।" />
           </p>
-          <ul className="mt-8 space-y-4">
-            <li className="glass flex items-center gap-4 rounded-2xl p-4">
+          <ul className="glass mt-7 divide-y divide-line overflow-hidden rounded-2xl">
+            <li className="flex items-center gap-4 px-4 py-3.5">
               <span className={tile}><Phone aria-hidden="true" className="h-5 w-5" /></span>
               <span>
                 <span className="block text-xs text-muted">Call us</span>
@@ -82,18 +82,18 @@ export function ContactForm() {
               </span>
             </li>
             <li>
-              <a href={`https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappText)}`} target="_blank" rel="noopener noreferrer" className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
+              <a href={`https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappText)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 px-4 py-3.5 transition-colors hover:bg-royal/5">
                 <span className={`${tile} !bg-[#1f9d55]`}><MessageCircle aria-hidden="true" className="h-5 w-5" /></span>
                 <span><span className="block text-xs text-muted">WhatsApp</span><span className="font-semibold">Message us on WhatsApp</span><span className="sr-only"> (opens in a new tab)</span></span>
               </a>
             </li>
             <li>
-              <a href={`mailto:${c.email}`} className="glass card-hover flex items-center gap-4 rounded-2xl p-4">
+              <a href={`mailto:${c.email}`} className="flex items-center gap-4 px-4 py-3.5 transition-colors hover:bg-royal/5">
                 <span className={tile}><Mail aria-hidden="true" className="h-5 w-5" /></span>
                 <span className="min-w-0"><span className="block text-xs text-muted">Email</span><span className="block break-all font-semibold">{c.email}</span></span>
               </a>
             </li>
-            <li className="glass flex items-center gap-4 rounded-2xl p-4">
+            <li className="flex items-center gap-4 px-4 py-3.5">
               <span className={tile}><MapPin aria-hidden="true" className="h-5 w-5" /></span>
               <span>
                 <span className="block text-xs text-muted">Visit</span>
@@ -145,7 +145,7 @@ export function ContactForm() {
               </div>
               <div>
                 <label htmlFor="f-message" className="text-sm font-semibold">Message <span className="font-normal text-muted">(optional)</span></label>
-                <textarea id="f-message" rows={4} value={form.message} onChange={(e) => set("message", e.target.value)} className={`${input} ${border("message")} resize-y`} {...aria("message")} />
+                <textarea id="f-message" rows={5} value={form.message} onChange={(e) => set("message", e.target.value)} className={`${input} ${border("message")} resize-y`} {...aria("message")} />
                 {err("message")}
               </div>
               {/* Honeypot: hidden from people and screen readers */}

@@ -1,12 +1,11 @@
 import { site } from "@/config/site";
-import { Avatar } from "@/components/ui/Avatar";
+import { LogoMark } from "./Logo";
 
 /**
- * Floating WhatsApp button: the founder's photo (initials until one is set in site.ts) in a soft green ring,
- * with a small WhatsApp badge. Shown on every screen size.
+ * Floating WhatsApp button: the Shree Investments emblem in a soft green ring, with a small WhatsApp badge.
+ * Shown on every screen size.
  */
 export function WhatsAppButton() {
-  const f = site.founder;
   const href = `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(site.contact.whatsappText)}`;
   return (
     <aside aria-label="WhatsApp chat">
@@ -14,12 +13,12 @@ export function WhatsAppButton() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Chat with ${f.name} on WhatsApp (opens in a new tab)`}
+        aria-label={`Chat with ${site.name} on WhatsApp (opens in a new tab)`}
         className="group fixed bottom-4 right-4 z-40 md:bottom-6 md:right-6"
       >
         <span className="pulse-ring relative inline-flex rounded-full bg-[#25d366]/25 p-2 shadow-[0_12px_32px_-8px_rgb(2_10_30/0.5)] ring-1 ring-[#25d366]/40 transition-transform duration-200 group-hover:scale-105">
-          <span className="block rounded-full ring-2 ring-white/90">
-            <Avatar name={f.name} photo={f.photo} size={56} />
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-navy ring-2 ring-white/90">
+            <LogoMark className="h-9 w-9" />
           </span>
           <span className="absolute -bottom-0.5 -right-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1f9d55] text-white ring-2 ring-white">
             <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">

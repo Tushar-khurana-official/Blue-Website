@@ -107,31 +107,17 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/15">
-        <div className="container-x py-7 text-[0.8rem] leading-relaxed">
-          <h2 className="font-display text-sm font-semibold text-white">Grievance redressal</h2>
-          <p className="mt-2">
-            Write to our grievance officer, {site.founder.name}, at{" "}
-            <a href={`mailto:${c.email}`} className="text-cyan-light underline hover:text-white">{c.email}</a> or call{" "}
-            <a href={`tel:${c.phoneHref}`} className="text-cyan-light underline hover:text-white">{c.phone}</a>. We respond within 7 working days.
-            If you are not satisfied, you can escalate to{" "}
-            <a href="https://www.amfiindia.com/" {...ext} className="text-cyan-light underline hover:text-white">AMFI</a>,{" "}
-            <a href="https://scores.sebi.gov.in/" {...ext} className="text-cyan-light underline hover:text-white">SEBI SCORES</a> and, after that,{" "}
-            <a href="https://smartodr.in/" {...ext} className="text-cyan-light underline hover:text-white">SMART ODR</a>.
-          </p>
-        </div>
-      </div>
-
       <div id="disclosures" className="border-t border-white/15">
-        <div className="container-x py-7 text-xs leading-relaxed text-on-dark-muted">
-          <h2 className="font-display text-sm font-semibold text-white">Important</h2>
-          <p className="mt-2">
-            {site.name} is an AMFI-registered mutual fund distributor (ARN: {r.arn}, EUIN: {r.euin}), not a SEBI-registered investment
-            adviser.{r.sebi && ` SEBI registration: ${r.sebi}.`} We earn trail commission from fund houses on the regular plans we distribute,
-            disclosed to you before you invest. {DISCLAIMER} Investments in the securities market are subject to market risks. 9 out of 10
-            individual traders in the equity futures and options segment incurred net losses (SEBI study). Derivatives can lose more than you
-            put in; trade them only if you understand the risk. Real estate is not regulated by SEBI; check RERA registration before investing.
-            Calculator results are illustrations based on assumed returns.
+        <div className="container-x space-y-2 py-6 text-xs leading-relaxed text-on-dark-muted">
+          <p>
+            {site.name} is an AMFI-registered mutual fund distributor (ARN: {r.arn} · EUIN: {r.euin}), not a SEBI-registered investment
+            adviser.{r.sebi && ` SEBI registration: ${r.sebi}.`} We earn trail commission on the regular plans we distribute. {DISCLAIMER}
+          </p>
+          <p>
+            <span className="font-semibold text-on-dark">Grievances:</span> {site.founder.name},{" "}
+            <a href={`mailto:${c.email}`} className="text-cyan-light underline hover:text-white">{c.email}</a>, replies within 7 working days.
+            Escalate to <a href="https://scores.sebi.gov.in/" {...ext} className="text-cyan-light underline hover:text-white">SEBI SCORES</a> or{" "}
+            <a href="https://smartodr.in/" {...ext} className="text-cyan-light underline hover:text-white">SMART ODR</a>.
           </p>
         </div>
       </div>
