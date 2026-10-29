@@ -8,7 +8,6 @@ import { MotionProvider } from "@/components/layout/MotionProvider";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { orgSchema } from "@/lib/seo";
 import { bootScript } from "@/lib/lang";
-import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
@@ -48,7 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </MotionProvider>
         <WhatsAppButton />
-        <MobileContactBar />
       </body>
     </html>
   );
