@@ -13,7 +13,7 @@ export default function Privacy() {
       <h2>How we use it</h2>
       <p>Only to respond to your enquiry and, if you become a client, to provide our services. We do not sell or rent your personal information to anyone.</p>
       <h2>Cookies</h2>
-      <p>This site stores your light/dark theme choice in your browser. [If you add analytics, describe it here and ask for consent first.]</p>
+      <p>This site does not use cookies. [If you add analytics, describe it here and ask for consent first.]</p>
       <h2>Data retention and your rights</h2>
       <p>You can ask us to access, correct or delete your information at any time by writing to <strong>{site.contact.email}</strong>. Your rights under the Digital Personal Data Protection Act, 2023 apply.</p>
       <h2>Contact</h2>

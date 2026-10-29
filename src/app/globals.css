@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens. Light is the default; .dark switches to the navy theme.
+   Design tokens (light theme only).
    --------------------------------------------------------------------------- */
 :root {
   --navy: #0a1f44;
@@ -26,28 +26,6 @@
   --hero-to: #e0f2fe;
   color-scheme: light;
 }
-
-.dark {
-  --bg: #0a1f44;
-  --bg-soft: #0d2550;
-  --surface: #10295a;
-  --glass: rgb(16 41 90 / 0.62);
-  --text: #eaf1ff;
-  --muted: #a9b8d9;
-  --border: #23407a;
-  --link: #8ab0ff;
-  --accent-text: #38bdf8;
-  --success: #34d399;
-  --danger: #ff8a80;
-  --ring: #8ab0ff;
-  --shadow: 0 24px 50px -24px rgb(0 0 0 / 0.6);
-  --hero-from: #0a1f44;
-  --hero-via: #0f2a5e;
-  --hero-to: #0b3a6e;
-  color-scheme: dark;
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-navy: var(--navy);

@@ -1,7 +1,7 @@
 # [Brand Name] — SIP, Mutual Funds & Stock Market website
 
 A modern, fully responsive fintech website built with **Next.js 15 (App Router)**, **Tailwind CSS v4** and **Framer Motion** (`motion`).
-Blue theme (navy `#0A1F44`, royal `#1E5EFF`, sky `#38BDF8`, soft `#F4F8FF`), light and dark modes, glassmorphism cards, Sora headings and Plus Jakarta Sans body text, Lucide icons.
+Blue theme (navy `#0A1F44`, royal `#1E5EFF`, sky `#38BDF8`, soft `#F4F8FF`), light mode only, glassmorphism cards, Sora headings and Plus Jakarta Sans body text, Lucide icons.
 
 ## Run it
 
@@ -28,7 +28,7 @@ Everything business-specific is in two files:
 - **`src/config/site.ts`**: brand name, tagline, phone, WhatsApp, email, address, hours, **ARN / EUIN / SEBI registration**, the counters (investors, assets, …), social links, navigation, and the disclaimer text.
 - **`src/lib/content.ts`**: services, "why choose us" tiles, the 4 steps, fund categories and risk levels, sample ticker data, testimonials, insight articles, FAQs and the contact form's "interested in" options.
 
-Colours are CSS variables at the top of `src/app/globals.css` (`:root` for light, `.dark` for dark). Replace the logo in `src/components/layout/Logo.tsx` and the favicon `src/app/icon.svg`.
+Colours are CSS variables at the top of `src/app/globals.css` (`:root`). Replace the logo in `src/components/layout/Logo.tsx` and the favicon `src/app/icon.svg`.
 
 **Contact form:** submissions go to `/api/contact`, which validates them (Indian mobile number, email, consent), filters bots with a honeypot field, rate-limits by IP, and POSTs each enquiry as JSON to `CONTACT_WEBHOOK_URL` (Zapier, Make, Google Apps Script, a CRM…). Without a webhook, enquiries are only logged on the server.
 
@@ -45,7 +45,7 @@ fintech-blue/
 │   │   ├── validate.ts           # contact-form validation (shared by form and API)
 │   │   └── seo.ts                # per-page metadata + FinancialService schema
 │   ├── app/
-│   │   ├── layout.tsx            # fonts, theme script, navbar, footer, WhatsApp button, JSON-LD
+│   │   ├── layout.tsx            # fonts, navbar, footer, WhatsApp button, JSON-LD
 │   │   ├── template.tsx          # page transition (fade + rise on navigation)
 │   │   ├── globals.css           # design tokens, glass/card styles, CSS animations, reduced motion
 │   │   ├── page.tsx              # Home: all 14 sections
@@ -54,7 +54,7 @@ fintech-blue/
 │   │   ├── api/contact/route.ts  # form endpoint
 │   │   ├── sitemap.ts · robots.ts · opengraph-image.tsx · icon.svg · not-found.tsx
 │   └── components/
-│       ├── layout/               # Navbar (glassy on scroll, mobile drawer), Footer, ThemeToggle, Logo, WhatsAppButton, MotionProvider
+│       ├── layout/               # Navbar (glassy on scroll, mobile drawer), Footer, Logo, WhatsAppButton, MotionProvider
 │       ├── sections/             # Hero, HeroChart, Ticker, Services, Calculator, WhyUs, HowItWorks, FundCategories,
 │       │                         # MarketSnapshot, Testimonials, Insights, Faq, CtaBanner, ContactForm, Legal
 │       └── ui/                   # Button, Reveal, Counter, SectionHeading, PageHero, Icon, Social, JsonLd
@@ -71,7 +71,7 @@ fintech-blue/
 
 ## Quality (measured on the production build)
 
-- **Accessibility:** axe WCAG 2.1 AA checks pass on every page in light and dark mode. Skip link, keyboard-navigable menu, tabs, accordion and carousel; visible focus rings; labelled controls; risk and gain/loss always shown with text, not colour alone.
+- **Accessibility:** axe WCAG 2.1 AA checks pass on every page. Skip link, keyboard-navigable menu, tabs, accordion and carousel; visible focus rings; labelled controls; risk and gain/loss always shown with text, not colour alone.
 - **Lighthouse (mobile, slow-4G + 4× CPU):** inner pages 90–94 performance, home page 85–91 (it holds all 14 sections). Desktop 100. Accessibility, Best Practices and SEO 100. Re-check on your production host.
 - **SEO:** unique title and description per page, canonical URLs, Open Graph and Twitter cards, generated OG image, `sitemap.xml`, `robots.txt`, FinancialService, FAQPage and WebApplication schema.
 

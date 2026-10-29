@@ -5,7 +5,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { MotionProvider } from "@/components/layout/MotionProvider";
-import { themeScript } from "@/components/layout/ThemeToggle";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { orgSchema } from "@/lib/seo";
 import "./globals.css";
@@ -22,17 +21,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F4F8FF" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A1F44" },
-  ],
+  themeColor: "#F4F8FF",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${jakarta.variable} ${sora.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Marks that JavaScript is running, so scroll-reveal content is only hidden when it can be revealed. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <JsonLd data={orgSchema} />
       </head>
       <body className="min-h-dvh">

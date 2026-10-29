@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { nav } from "@/config/site";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
-import { ThemeToggle } from "./ThemeToggle";
 
 /** Sticky navbar that turns glassy and blurred once the page scrolls. Mobile: native <dialog> drawer. */
 export function Navbar() {
@@ -60,7 +59,6 @@ export function Navbar() {
           </ul>
         </nav>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <span className="hidden sm:inline-flex">
             <Button href="/contact">Start Investing</Button>
           </span>
