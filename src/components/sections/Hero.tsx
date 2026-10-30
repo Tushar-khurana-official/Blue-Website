@@ -1,14 +1,12 @@
 import { BadgeCheck, CalendarCheck, Phone } from "lucide-react";
 import { site } from "@/config/site";
 import { credentials } from "@/lib/content";
-import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { T } from "@/components/ui/T";
 import { HeroCalc } from "./HeroCalc";
 
 export function Hero() {
-  const f = site.founder;
   return (
     <>
       <section aria-labelledby="hero-title" className="hero-bg relative overflow-hidden">
@@ -43,24 +41,6 @@ export function Hero() {
                 <Phone aria-hidden="true" className="h-5 w-5" /> {site.contact.phone}
               </Button>
             </div>
-            <div className="mt-5 flex items-center gap-3">
-              <Avatar name={f.name} photo={f.photo} size={48} />
-              <p className="text-sm leading-snug text-[#bfd3f5]">
-                <span className="block font-semibold text-white">
-                  <T en={`Talk directly to ${f.name}`} hi={`सीधे ${f.nameHi} से बात करें`} />
-                </span>
-                <T
-                  en="First consultation is free. No obligation, no product pushed."
-                  hi="पहला कंसल्टेशन मुफ़्त है। कोई दबाव नहीं, कोई प्रोडक्ट थोपा नहीं जाएगा।"
-                />
-              </p>
-            </div>
-            <p className="mt-3 text-xs text-on-dark-muted">
-              <T
-                en="Investments are subject to market risks. Read all related documents carefully."
-                hi="निवेश बाज़ार जोखिमों के अधीन है। सभी संबंधित दस्तावेज़ ध्यान से पढ़ें।"
-              />
-            </p>
           </div>
           <HeroCalc />
         </div>
