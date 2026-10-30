@@ -8,7 +8,7 @@ import { T } from "@/components/ui/T";
 /** Founder quote, the fund-house marquee and the distributor disclosure. */
 export function FundHouses() {
   return (
-    <section id="resources" aria-labelledby="fh-title" className="bg-bg-soft"><div className="container-x py-16 md:py-20">
+    <section id="resources" aria-labelledby="fh-title" className="border-t border-line bg-bg-soft md:border-t-0"><div className="container-x py-16 md:py-20">
       <figure className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-navy to-royal px-6 py-14 text-center text-white sm:px-14 md:py-16">
         <div aria-hidden="true" className="blob blob-a -right-16 -top-20 h-72 w-72 text-sky/40" />
         <span aria-hidden="true" className="relative block font-display text-8xl leading-[0.6] text-cyan-light/70">&ldquo;</span>

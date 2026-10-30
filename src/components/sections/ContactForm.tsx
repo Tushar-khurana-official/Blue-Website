@@ -71,7 +71,7 @@ export function ContactForm() {
             <Clock aria-hidden="true" className="h-4 w-4" />
             <T en="We call back within one working day." hi="हम एक कार्य-दिवस के भीतर कॉल बैक करते हैं।" />
           </p>
-          <ul className="glass mt-7 divide-y divide-line overflow-hidden rounded-2xl">
+          <ul className="glass mt-7 hidden divide-y divide-line overflow-hidden rounded-2xl md:block">
             <li className="flex items-center gap-4 px-4 py-3.5">
               <span className={tile}><Phone aria-hidden="true" className="h-5 w-5" /></span>
               <span>
